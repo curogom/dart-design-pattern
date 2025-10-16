@@ -11,6 +11,8 @@ dependencies:
   flutter_riverpod: ^3.0.0
   week01_patterns:
     path: ../../week01/dart
+  week02_patterns:
+    path: ../../week02/dart
 
 dev_dependencies:
   flutter_lints: ^3.0.0

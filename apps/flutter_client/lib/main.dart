@@ -4,6 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'features/common/coming_soon_page.dart';
 import 'features/week01/task_report_page.dart';
 import 'features/week01/theme_switcher_page.dart';
+import 'features/week02/delivery_tracker_page.dart';
 
 void main() {
   runApp(const ProviderScope(child: PatternDemoApp()));
@@ -41,8 +42,8 @@ class PatternHomePage extends StatelessWidget {
     ),
     PatternDemo(
       title: '2주차 · 옵저버 패턴',
-      description: '이벤트 브로드캐스트 데모 (구현 예정).',
-      builder: (_) => const ComingSoonPage(weekLabel: '2주차'),
+      description: '배송 상태 전파와 오류 알림을 Stream으로 체험합니다.',
+      builder: (_) => const DeliveryTrackerPage(),
     ),
     PatternDemo(
       title: '3주차 · 데코레이터 & 컴포지트',

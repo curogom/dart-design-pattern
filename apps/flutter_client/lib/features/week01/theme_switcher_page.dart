@@ -16,8 +16,7 @@ class ThemeSwitcherPage extends ConsumerWidget {
       primaryColor: Color(theme.primaryColor),
       colorScheme: ColorScheme.fromSeed(
         seedColor: Color(theme.accentColor),
-        brightness:
-            theme.name == 'dark' ? Brightness.dark : Brightness.light,
+        brightness: theme.name == 'dark' ? Brightness.dark : Brightness.light,
       ),
       textTheme: ThemeData(useMaterial3: true).textTheme.apply(
             fontFamily: theme.textStyle,
@@ -72,8 +71,7 @@ class ThemeSwitcherPage extends ConsumerWidget {
               const SizedBox(height: 32),
               Card(
                 elevation: 0,
-                color:
-                    Theme.of(context).colorScheme.surfaceContainerHighest,
+                color: Theme.of(context).colorScheme.surfaceContainerHighest,
                 child: Padding(
                   padding: const EdgeInsets.all(16),
                   child: Column(
