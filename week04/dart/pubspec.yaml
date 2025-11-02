@@ -1,0 +1,11 @@
+name: week04_patterns
+description: Factory Method and Abstract Factory pattern examples for week 04.
+environment:
+  sdk: ">=3.2.0 <4.0.0"
+
+dependencies:
+  riverpod: ^3.0.0
+
+dev_dependencies:
+  lints: ^3.0.0
+  test: ^1.24.0

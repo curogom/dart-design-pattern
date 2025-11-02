@@ -9,7 +9,7 @@
 3. 구독 해제(dispose)는 필수이며, 메모리 누수와 중복 알림을 방지한다.
 4. 옵저버는 `onStatus`, `onError`, `onDone`을 구현해 정상 흐름과 예외 모두를 다룬다.
 5. 강결합을 피하려면 옵저버가 주제를 직접 호출하지 말고 이벤트 데이터만으로 판단하게 설계한다.
-6. Riverpod과 결합하면 `StreamProvider`나 `NotifierProvider.autoDispose`로 UI 갱신을 안정적으로 관리한다.
+6. Riverpod과 결합하면 `StreamProvider`나 `AutoDisposeNotifierProvider`로 UI 갱신을 안정적으로 관리한다.
 7. 긴 수명 스트림에서 백프레셔가 필요하면 `StreamTransformer`나 배치 처리로 완화한다.
 8. 테스트에서는 지연 전파와 에러 전파를 명시적으로 검증해 히든 버그를 예방한다.
 9. UI에서는 토스트·스낵바 등 단발성 피드백과 리스트 업데이트를 분리해 UX 혼잡을 줄인다.
@@ -41,7 +41,7 @@ sequenceDiagram
 2. 옵저버 인터페이스에 상태·에러 핸들러를 모두 선언해 일관된 계약을 제공한다.
 3. 주제(`DeliveryTracker`)는 구독자 목록과 `StreamSubscription`을 관리하며, 이벤트 입력 시 `add`/`addError`를 호출한다.
 4. 구독 해제는 `Future<void> Function()` 디스포저로 래핑해 호출 시 안전하게 취소한다.
-5. Riverpod에서는 `NotifierProvider.autoDispose`로 스트림을 UI 상태로 축약하고, `ref.onDispose`로 구독을 정리한다.
+5. Riverpod에서는 `AutoDisposeNotifierProvider`로 스트림을 UI 상태로 축약하고, `ref.onDispose`로 구독을 정리한다.
 
 ## Dart 콘솔 예제
 - `lib/src/observer/observer_example.dart`의 `main()`은 `DeliveryTracker`에 콘솔 옵저버를 붙여 주문 상태 변화를 출력한다.
@@ -49,7 +49,7 @@ sequenceDiagram
 
 ## Riverpod 연동 예시
 - `deliveryTrackerProvider`는 `Provider`로 트래커를 생성하고, `ref.onDispose`로 리소스를 회수한다.
-- `deliveryTimelineProvider`는 `NotifierProvider.autoDispose`를 사용해 이벤트와 에러를 누적한 `DeliveryTimeline`을 노출한다.
+- `deliveryTimelineProvider`는 `AutoDisposeNotifierProvider`를 사용해 이벤트와 에러를 누적한 `DeliveryTimeline`을 노출한다.
 - `deliveryStreamProvider`를 `ConsumerWidget`에서 구독하면 SnackBar, 로딩 인디케이터 등을 쉽게 연결할 수 있다.
 
 ## 대안 및 비교 (5선)

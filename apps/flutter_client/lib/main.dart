@@ -5,6 +5,8 @@ import 'features/common/coming_soon_page.dart';
 import 'features/week01/task_report_page.dart';
 import 'features/week01/theme_switcher_page.dart';
 import 'features/week02/delivery_tracker_page.dart';
+import 'features/week04/factory_method_logger_page.dart';
+import 'features/week04/support_suite_page.dart';
 
 void main() {
   runApp(const ProviderScope(child: PatternDemoApp()));
@@ -51,9 +53,14 @@ class PatternHomePage extends StatelessWidget {
       builder: (_) => const ComingSoonPage(weekLabel: '3주차'),
     ),
     PatternDemo(
-      title: '4주차 · 팩토리 메서드 & 추상 팩토리',
-      description: '생성 패턴 활용 예시 (구현 예정).',
-      builder: (_) => const ComingSoonPage(weekLabel: '4주차'),
+      title: '4주차 · 팩토리 메서드: 감사 로그',
+      description: 'Provider override로 로그 싱크를 교체해 봅니다.',
+      builder: (_) => const FactoryMethodLoggerPage(),
+    ),
+    PatternDemo(
+      title: '4주차 · 추상 팩토리: Support Suite',
+      description: 'Tier/Locale에 맞춰 에이전트와 채널 구성을 생성합니다.',
+      builder: (_) => const SupportSuitePage(),
     ),
     PatternDemo(
       title: '5주차 · 상태 관리 패턴',

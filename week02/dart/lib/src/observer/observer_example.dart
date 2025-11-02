@@ -85,7 +85,8 @@ class DeliveryTracker {
 
   final DateTime Function() _clock;
   final StreamController<DeliveryEvent> _controller;
-  final Map<DeliveryObserver, StreamSubscription<DeliveryEvent>> _observers = {};
+  final Map<DeliveryObserver, StreamSubscription<DeliveryEvent>> _observers =
+      {};
 
   Stream<DeliveryEvent> get stream => _controller.stream;
 
@@ -137,7 +138,8 @@ class DeliveryTracker {
   }
 
   Future<void> close() async {
-    final futures = _observers.values.map((subscription) => subscription.cancel());
+    final futures =
+        _observers.values.map((subscription) => subscription.cancel());
     await Future.wait(futures);
     _observers.clear();
     await _controller.close();
@@ -152,7 +154,8 @@ class ConsoleDeliveryObserver extends DeliveryObserver {
   @override
   void onStatus(DeliveryEvent event) {
     // 실전에서는 스낵바나 상태 표시줄로 연결할 수 있다.
-    print('[$label] ${event.orderId} -> ${event.status} (${event.note ?? 'no note'})');
+    print(
+        '[$label] ${event.orderId} -> ${event.status} (${event.note ?? 'no note'})');
   }
 
   @override
@@ -191,7 +194,7 @@ class DeliveryTimeline {
 }
 
 /// Riverpod 연동: Stream을 UI 상태로 축약해 리스트 갱신과 에러 알림을 동시에 관리한다.
-class DeliveryTimelineNotifier extends Notifier<DeliveryTimeline> {
+class DeliveryTimelineNotifier extends AutoDisposeNotifier<DeliveryTimeline> {
   StreamSubscription<DeliveryEvent>? _subscription;
 
   @override
@@ -218,7 +221,8 @@ final deliveryTrackerProvider = Provider<DeliveryTracker>((ref) {
   return tracker;
 });
 
-final deliveryTimelineProvider = NotifierProvider.autoDispose<DeliveryTimelineNotifier, DeliveryTimeline>(
+final deliveryTimelineProvider =
+    AutoDisposeNotifierProvider<DeliveryTimelineNotifier, DeliveryTimeline>(
   DeliveryTimelineNotifier.new,
 );
 

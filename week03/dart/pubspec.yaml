@@ -1,0 +1,11 @@
+name: week03_patterns
+description: Decorator and Composite pattern examples for week 03.
+environment:
+  sdk: ">=3.2.0 <4.0.0"
+
+dependencies:
+  riverpod: ^3.0.0
+
+dev_dependencies:
+  lints: ^3.0.0
+  test: ^1.24.0
