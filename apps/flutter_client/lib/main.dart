@@ -7,6 +7,8 @@ import 'features/week01/theme_switcher_page.dart';
 import 'features/week02/delivery_tracker_page.dart';
 import 'features/week04/factory_method_logger_page.dart';
 import 'features/week04/support_suite_page.dart';
+import 'features/week05/support_state_machine_page.dart';
+import 'features/week06/support_review_page.dart';
 
 void main() {
   runApp(const ProviderScope(child: PatternDemoApp()));
@@ -63,14 +65,14 @@ class PatternHomePage extends StatelessWidget {
       builder: (_) => const SupportSuitePage(),
     ),
     PatternDemo(
-      title: '5주차 · 상태 관리 패턴',
-      description: '상태 전환과 로깅 데모 (구현 예정).',
-      builder: (_) => const ComingSoonPage(weekLabel: '5주차'),
+      title: '5주차 · 상태 & 싱글턴',
+      description: '티켓 상태 머신과 Telemetry 싱글턴을 실시간 체험합니다.',
+      builder: (_) => const SupportStateMachinePage(),
     ),
     PatternDemo(
-      title: '6주차 · 종합 응용',
-      description: '어댑터·프록시 모킹 예시 (구현 예정).',
-      builder: (_) => const ComingSoonPage(weekLabel: '6주차'),
+      title: '6주차 · 어댑터 & 프록시',
+      description: '대화 로그 변환과 KB 프록시 캐시를 확인합니다.',
+      builder: (_) => const SupportReviewPage(),
     ),
   ];
 

@@ -1,9 +1,10 @@
-name: week04_patterns
-description: Factory Method and Abstract Factory pattern examples for week 04.
+name: week05_patterns
+description: Singleton and State pattern examples for week 05.
 environment:
   sdk: ">=3.2.0 <4.0.0"
 
 dependencies:
+  collection: ^1.18.0
   riverpod: ^2.4.9
 
 dev_dependencies:

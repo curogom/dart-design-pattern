@@ -37,3 +37,6 @@
 
 # Logs
 *.log
+
+# Local agent guidelines (untracked)
+AGENTS.md
