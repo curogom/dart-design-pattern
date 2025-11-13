@@ -16,7 +16,7 @@
 - 골든 테스트 시 `flutter test --update-goldens` 수행 로그 첨부
 
 ## 산출물 경로
-- 순수 Dart 코드: `week01/dart/lib/strategy/theme_strategy.dart`, `week01/dart/lib/template_method/task_report.dart`
+- 순수 Dart 코드: `week01/dart/lib/src/strategy/theme_strategy.dart`, `week01/dart/lib/src/template_method/task_report.dart`
 - 테스트: `week01/dart/test/strategy/theme_strategy_test.dart`, `week01/dart/test/template_method/task_report_test.dart`
 - 문서: `week01/docs/strategy.md`, `week01/docs/template_method.md`
 - Q&A 답변: `week01/docs/strategy_qna.md`, `week01/docs/template_method_qna.md`

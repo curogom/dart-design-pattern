@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import 'features/common/coming_soon_page.dart';
 import 'features/week01/task_report_page.dart';
 import 'features/week01/theme_switcher_page.dart';
 import 'features/week02/delivery_tracker_page.dart';
+import 'features/week03/decorator_composite_page.dart';
 import 'features/week04/factory_method_logger_page.dart';
 import 'features/week04/support_suite_page.dart';
 import 'features/week05/support_state_machine_page.dart';
@@ -51,8 +51,8 @@ class PatternHomePage extends StatelessWidget {
     ),
     PatternDemo(
       title: '3주차 · 데코레이터 & 컴포지트',
-      description: '위젯 트리 확장 데모 (구현 예정).',
-      builder: (_) => const ComingSoonPage(weekLabel: '3주차'),
+      description: '레이어 비용과 스타일 트리를 인터랙티브하게 조정합니다.',
+      builder: (_) => const Week03DecoratorCompositePage(),
     ),
     PatternDemo(
       title: '4주차 · 팩토리 메서드: 감사 로그',

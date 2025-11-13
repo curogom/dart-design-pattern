@@ -13,6 +13,8 @@ dependencies:
     path: ../../week01/dart
   week02_patterns:
     path: ../../week02/dart
+  week03_patterns:
+    path: ../../week03/dart
   week04_patterns:
     path: ../../week04/dart
   week05_patterns:

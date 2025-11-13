@@ -8,8 +8,6 @@
 ## 프로젝트 구조
 - `week01`~`week06` : 주차별 `Overview.md`, 순수 Dart 패키지(`weekXX/dart`), 문서(`weekXX/docs`)
 - `apps/flutter_client` : 주차별 Flutter 데모를 모은 멀티 페이지 앱
-- `AGENTS.md` : 기여 시 따라야 할 운영 규칙
-- `prompt.md` : 패턴 생성, 테스트, 리뷰 등 작업용 프롬프트 모음
 
 ## 주차별 로드맵
 | 주차 | 주제 | 학습 패턴 | Flutter/Dart 예제 |

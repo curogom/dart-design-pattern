@@ -238,6 +238,13 @@ packages:
       relative: true
     source: path
     version: "0.0.0"
+  week03_patterns:
+    dependency: "direct main"
+    description:
+      path: "../../week03/dart"
+      relative: true
+    source: path
+    version: "0.0.0"
   week04_patterns:
     dependency: "direct main"
     description:
